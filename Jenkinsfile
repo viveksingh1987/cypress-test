@@ -1,6 +1,17 @@
 pipeline{
     agent any
-    tools {nodejs "node"}
+    tools {
+        nodejs "nodejs"
+    }
+    environment {
+        NODE_HOME = tool 'nodejs'
+        PATH = "${NODE_HOME}/bin:${env.PATH}"
+    }
+    options {
+        disableConcurrentBuilds()
+        timestamps()
+        timeout(time: 1, unit: 'HOURS')
+    }
     stages{
         stage("Build"){
             steps{
