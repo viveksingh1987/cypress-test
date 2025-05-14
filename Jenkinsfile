@@ -29,10 +29,19 @@ pipeline{
             }
         }
         stage("Install Cypress"){
-            steps{
-                echo "======== Install Cypress ========"
-                 sh 'npm install cypress --force'
-            }
+            // steps{
+            //     echo "======== Install Cypress ========"
+            //      sh 'npm install cypress --force'
+            // }
+                steps{
+                    sh """
+                    echo $pwd
+                    npm install && 
+                    export NODE_TLS_REJECT_UNAUTHORIZED=0 && 
+                    ./node_modules/.bin/cypress install --force && 
+                    ./node_modules/.bin/cypress run --headless --browser chrome 
+                    """
+                }
         }
          stage("Verify Cypress"){
             steps{
