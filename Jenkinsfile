@@ -26,7 +26,7 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                  //sh 'npm install'
-                echo $NODE_HOME
+                //echo $NODE_HOME
                 echo $JENKINS_HOME
                 echo $WORKSPACE
                 echo $pwd
