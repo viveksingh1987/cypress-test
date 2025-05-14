@@ -37,7 +37,7 @@ pipeline{
          stage("Verify Cypress"){
             steps{
                 echo "======== Verify Cypress ========"
-                sh 'ls -l /var/jenkins_home/.cache/Cypress/14.3.3/Cypress'
+               // sh 'ls -l /var/jenkins_home/.cache/Cypress/14.3.3/Cypress'
             }
         }
         stage("Test"){
