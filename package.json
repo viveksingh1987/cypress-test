@@ -11,7 +11,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "./node_modules/cypress/bin/cypress run"
   },
   "dependencies": {
     "cypress": "^14.3.3"
