@@ -11,27 +11,32 @@ pipeline{
         disableConcurrentBuilds()
         timestamps()
         timeout(time: 1, unit: 'HOURS')
+        retry(3)
+        buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     stages{
-        stage("Build"){
+        stage("Checkout code"){
             steps{
-                echo "========executing ========"
-               
+                echo "========git checkout code ========"
             }
         
         }
+        stage("Build"){
+            steps{
+                echo "======== Install npm modules ========"
+                 sh 'npm install'
+            }
+        }
         stage("Test"){
             steps{
-                echo "========B executing ========"
-                sh 'npm install'
+                echo "======== Start Cypress tests ========"
                 sh 'npm run test'
-
             }
         }
     }
     post{
         always{
-            echo "========always========"
+            echo "======== Generate Cypress Report ========"
         }
         success{
             echo "========pipeline executed successfully ========"
