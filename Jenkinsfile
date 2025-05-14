@@ -16,16 +16,9 @@ pipeline{
         buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     stages{
-        stage("Checkout code"){
+        stage("Enviornment Variables"){
             steps{
                 echo "========git checkout code ========"
-            }
-        
-        }
-        stage("Build"){
-            steps{
-                echo "======== Install npm modules ========"
-                sh 'npm install'
                 script{
                     def pwd = pwd()
                     echo "======== Print Environment Variables ========"
@@ -37,6 +30,12 @@ pipeline{
                     echo "pwd: ${pwd}"
                     echo "JENKINS_HOME: ${JENKINS_HOME}"
                 }
+            }
+        }
+        stage("Build"){
+            steps{
+                echo "======== Install npm modules ========"
+                sh 'npm install'
             }
         }
         stage("Verify Cypress"){
