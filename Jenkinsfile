@@ -30,6 +30,7 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                 sh 'npm install'
+                sh 'npm install cypress'
             }
         }
         stage("Test"){
