@@ -1,22 +1,13 @@
 pipeline{
     agent any
+    tools {nodejs "node"}
     stages{
         stage("Build"){
             steps{
                 echo "========executing ========"
                
             }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
-            }
+        
         }
         stage("Test"){
             steps{
@@ -24,17 +15,6 @@ pipeline{
                 sh 'npm install'
                 sh 'npm run test'
 
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========B executed successfully========"
-                }
-                failure{
-                    echo "========B execution failed========"
-                }
             }
         }
     }
