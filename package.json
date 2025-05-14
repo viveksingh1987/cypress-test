@@ -11,12 +11,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "cypress:merge": "mochawesome-merge 'cypress/results/*.json' > cypress/fixtures/mochawesome.json",
-    "cypress:marge": "marge cypress/fixtures/mochawesome.json -f mochawesome.html -o mochawesome_reports"
+    "test": "cypress run"
   },
   "dependencies": {
-    "cypress": "^14.3.3",
-    "npx": "latest"
+    "cypress": "^14.3.3"
   }
 }
