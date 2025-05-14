@@ -6,7 +6,7 @@ pipeline{
     environment {
         NODE_HOME = tool 'nodejs24'
         PATH = "${NODE_HOME}/bin:${env.PATH}"
-        //CYPRESS_CACHE_FOLDER = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/"
+        CYPRESS_CACHE_FOLDER = "/var/jenkins_home/.cache/Cypress"
         //CYPRESS_RUN_BINARY = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/bin/cypress"
     }
     options {
@@ -25,7 +25,7 @@ pipeline{
         stage("Build"){
             steps{
                 echo "======== Install npm modules ========"
-                 //sh 'npm install'
+                sh 'npm install'
                 script{
                     def pwd = pwd()
                     echo "======== Print Environment Variables ========"
