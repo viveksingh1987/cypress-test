@@ -1,10 +1,10 @@
 pipeline{
     agent any
     tools {
-        nodejs "nodejs"
+        nodejs "nodejs24"
     }
     environment {
-        NODE_HOME = tool 'nodejs'
+        NODE_HOME = tool 'nodejs24'
         PATH = "${NODE_HOME}/bin:${env.PATH}"
     }
     options {
