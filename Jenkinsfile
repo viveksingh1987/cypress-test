@@ -36,7 +36,7 @@ pipeline{
         stage("Test"){
             steps{
                 echo "======== Start Cypress tests ========"
-                sh 'npm cypress run'
+                sh 'npm run test'
             }
         }
     }
