@@ -7,7 +7,7 @@ pipeline{
         NODE_HOME = tool 'nodejs24'
         PATH = "${NODE_HOME}/bin:${env.PATH}"
         CYPRESS_CACHE_FOLDER = '/var/jenkins_home/.cache/Cypress'
-        CYPRESS_RUN_BINARY = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/bin"
+       // CYPRESS_RUN_BINARY = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/bin"
     }
     stages{
         stage("Enviornment Variables"){
@@ -19,7 +19,7 @@ pipeline{
                     echo "NODE_HOME: ${NODE_HOME}"
                     echo "PATH: ${PATH}"
                     echo "CYPRESS_CACHE_FOLDER: ${CYPRESS_CACHE_FOLDER}"
-                    echo "CYPRESS_RUN_BINARY: ${CYPRESS_RUN_BINARY}"
+                  //  echo "CYPRESS_RUN_BINARY: ${CYPRESS_RUN_BINARY}"
                     echo "WORKSPACE: ${WORKSPACE}"
                     echo "pwd: ${pwd}"
                     echo "JENKINS_HOME: ${JENKINS_HOME}"
@@ -36,7 +36,7 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                 sh 'npm install'
-                sh 'npm install cypress --save-dev'
+                sh 'npx install cypress'
             }
         }
         stage("Verify Cypress") {
