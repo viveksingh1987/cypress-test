@@ -32,23 +32,7 @@ pipeline{
                 echo $pwd
             }
         }
-        stage("Install Cypress"){
-            // steps{
-            //     echo "======== Install Cypress ========"
-            //      sh 'npm install cypress --force'
-            // }
-                // steps{
-                //     sh """
-                //     echo $pwd
-
-                //     npm install && 
-                //     export NODE_TLS_REJECT_UNAUTHORIZED=0 && 
-                //     ./node_modules/.bin/cypress install --force && 
-                //     ./node_modules/.bin/cypress run --headless --browser chrome 
-                //     """
-                // }
-        }
-         stage("Verify Cypress"){
+        stage("Verify Cypress"){
             steps{
                 echo "======== Verify Cypress ========"
                // sh 'ls -l /var/jenkins_home/.cache/Cypress/14.3.3/Cypress'
