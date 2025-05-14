@@ -24,7 +24,7 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                  sh 'npm install'
-                 sh 'npx cypress install'
+                 sh 'npm install cypress --save-dev --force'
             }
         }
         stage("Test"){
