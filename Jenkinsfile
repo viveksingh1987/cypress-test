@@ -26,10 +26,17 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                  //sh 'npm install'
-                //echo $NODE_HOME
-                echo $JENKINS_HOME
-                echo $WORKSPACE
-                echo $pwd
+                script{
+                    def pwd = pwd()
+                    echo "======== Print Environment Variables ========"
+                    echo "NODE_HOME: ${NODE_HOME}"
+                    echo "PATH: ${PATH}"
+                    echo "CYPRESS_CACHE_FOLDER: ${CYPRESS_CACHE_FOLDER}"
+                    echo "CYPRESS_RUN_BINARY: ${CYPRESS_RUN_BINARY}"
+                    echo "WORKSPACE: ${WORKSPACE}"
+                    echo "pwd: ${pwd}"
+                    echo "JENKINS_HOME: ${JENKINS_HOME}"
+                }
             }
         }
         stage("Verify Cypress"){
