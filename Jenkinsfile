@@ -31,7 +31,7 @@ pipeline{
                     echo "======== Print Environment Variables ========"
                     echo "NODE_HOME: ${NODE_HOME}"
                     echo "PATH: ${PATH}"
-                    echo "CYPRESS_CACHE_FOLDER: ${CYPRESS_CACHE_FOLDER}"
+                  //  echo "CYPRESS_CACHE_FOLDER: ${CYPRESS_CACHE_FOLDER}"
                     echo "CYPRESS_RUN_BINARY: ${CYPRESS_RUN_BINARY}"
                     echo "WORKSPACE: ${WORKSPACE}"
                     echo "pwd: ${pwd}"
