@@ -26,6 +26,10 @@ pipeline{
             steps{
                 echo "======== Install npm modules ========"
                  //sh 'npm install'
+                echo $NODE_HOME
+                echo $JENKINS_HOME
+                echo $WORKSPACE
+                echo $pwd
             }
         }
         stage("Install Cypress"){
@@ -33,15 +37,16 @@ pipeline{
             //     echo "======== Install Cypress ========"
             //      sh 'npm install cypress --force'
             // }
-                steps{
-                    sh """
-                    echo $pwd
-                    npm install && 
-                    export NODE_TLS_REJECT_UNAUTHORIZED=0 && 
-                    ./node_modules/.bin/cypress install --force && 
-                    ./node_modules/.bin/cypress run --headless --browser chrome 
-                    """
-                }
+                // steps{
+                //     sh """
+                //     echo $pwd
+
+                //     npm install && 
+                //     export NODE_TLS_REJECT_UNAUTHORIZED=0 && 
+                //     ./node_modules/.bin/cypress install --force && 
+                //     ./node_modules/.bin/cypress run --headless --browser chrome 
+                //     """
+                // }
         }
          stage("Verify Cypress"){
             steps{
