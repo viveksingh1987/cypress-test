@@ -30,7 +30,7 @@ pipeline{
         stage("Install Cypress"){
             steps{
                 echo "======== Install Cypress ========"
-                 sh 'npx install cypress --force'
+                 sh 'npm install cypress --force'
             }
         }
          stage("Verify Cypress"){
