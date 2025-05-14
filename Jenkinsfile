@@ -17,6 +17,23 @@ pipeline{
                 }
             }
         }
+        stage("Test"){
+            steps{
+                echo "========B executing ========"
+                sh 'npm run test'
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========B executed successfully========"
+                }
+                failure{
+                    echo "========B execution failed========"
+                }
+            }
+        }
     }
     post{
         always{
