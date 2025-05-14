@@ -1,0 +1,19 @@
+{
+  "name": "cypress-test",
+  "version": "1.0.0",
+  "description": "Cypress test",
+  "keywords": [
+    "cypress",
+    "test"
+  ],
+  "license": "ISC",
+  "author": "Vivek Singh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "dependencies": {
+    "cypress": "^14.3.3"
+  }
+}
