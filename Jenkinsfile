@@ -6,7 +6,8 @@ pipeline{
     environment {
         NODE_HOME = tool 'nodejs24'
         PATH = "${NODE_HOME}/bin:${env.PATH}"
-        CYPRESS_CACHE_FOLDER = "/var/jenkins_home/.cache/Cypress"
+        CYPRESS_CACHE_FOLDER = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/"
+        CYPRESS_RUN_BINARY = "/var/jenkins_home/workspace/cypress2/node_modules/cypress/bin/cypress"
     }
     options {
         disableConcurrentBuilds()
