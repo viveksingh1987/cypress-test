@@ -1,10 +1,5 @@
 pipeline{
-    agent {
-         docker {
-            image 'node:22' // or any other version you need
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // if you need Docker-in-Docker
-          }
-    }
+    agent any
     stages{
         stage("Build"){
             steps{
