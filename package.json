@@ -13,7 +13,11 @@
   "scripts": {
     "test": "./node_modules/cypress/bin/cypress run"
   },
-  "dependencies": {
+  "devDependencies": {
     "cypress": "^14.3.3"
+  },
+  "dependencies": {
+    "cypress": "^14.3.3",
+    "npx": "latest"
   }
 }
